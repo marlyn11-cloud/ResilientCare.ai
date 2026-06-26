@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResilientCare.ai</title>
+    <meta name="description" content="ResilientCare is an AI Driven Mental Health Coach specializing in day-to-day conflicts and academic stress management.">
+    <meta name="theme-color" content="#4a90e2">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="ResilientCare">
+    <link rel="manifest" href="./manifest.json">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%234a90e2' width='192' height='192'/><text x='50%' y='50%' font-size='100' font-weight='bold' fill='white' text-anchor='middle' dominant-baseline='central'>RC</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%234a90e2' width='192' height='192'/><text x='50%' y='50%' font-size='100' font-weight='bold' fill='white' text-anchor='middle' dominant-baseline='central'>RC</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="pwa-install.js"></script>
+    <script src="script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@xenova/transformers/dist/transformers.min.js"></script>
+</head>
+<body>
+    <div id="home-screen" class="screen">
+        <div class="landing-page">
+            <h1>ResilientCare</h1>
+            <p>Your compassionate AI companion.</p>
+            
+            <p id="current-date" style="color: gray; margin-bottom: 20px;"></p>
+
+            <div class="vent-container">
+                <svg class="progress-ring" width="220" height="220">
+                    <circle class="progress-ring__circle" stroke="#4a90e2" stroke-width="8" fill="transparent" r="95" cx="110" cy="110"/>
+                </svg>
+                <div class="btn-vent">
+                    <b>Hold to Vent</b>
+                    <p>Let it all out</p>
+                </div>
+            </div>
+
+            <button class="orb-how-it-works" onclick="openHowItWorks(event)">How it works</button>
+
+            <nav class="action-row">
+                <button class="btn-insights" onclick="window.location.href='insights.html'">View Insights</button>
+                <button class="btn-history" onclick="window.location.href='history.html'">View History</button>
+                <button class="btn-therapy" onclick="window.location.href='https://www.psychologytoday.com/us/therapists'">Find A Therapist</button>
+                <button class="btn-settings" onclick="window.location.href='settings.html'">View Settings</button> 
+            </nav>
+        </div>
+    </div>
+
+    <div id="howItWorksModal" class="modal-overlay">
+        <div class="modal-content-box">
+            <button class="modal-close" onclick="closeHowItWorks()">✕</button>
+            
+            <div class="modal-header-section">
+                <span class="modal-subtitle">HOW IT WORKS</span>
+                <h2 class="modal-title">Healing happens in <br><em>these gentle steps</em></h2>
+            </div>
+
+            <div class="step-container">
+                <div class="step-number">!!!</div>
+                <div class="step-text">
+                    <h3>IMPORTANT REMINDER</h3>
+                    <p>ResilientCare is designed to provide support during challenging academic moments. It is <b>not</b> a professional mental health care provider. For major crisis situations, please contact a mental health professional or crisis hotline.</p>
+                </div>
+            </div>
+
+            <div class="step-container">
+                <div class="step-number">00</div>
+                <div class="step-text">
+                    <h3>OVERVIEW</h3>
+                    <p>ResilientCare is an AI Driven Mental Health Coach which specializes in day to day conflicts that helps handle your emotions in any <b>MICRO</b> situation. Students specifically benefit from support through academic stress, burnout, and anxiety.</p>
+                </div>
+            </div>
+
+            <div class="step-container">
+                <div class="step-number">01</div>
+                <div class="step-text">
+                    <h3>Open the app, hold the Vent button</h3>
+                    <p>Whenever you're overwhelmed, anxious, or just need to be heard, open ResilientCare and press the glowing orb. Speak freely for as long as you need.</p>
+                </div>
+            </div>
+            
+            <div class="step-container">
+                <div class="step-number">02</div>
+                <div class="step-text">
+                    <h3>Your AI listens with care</h3>
+                    <p>Our compassionate AI processes your words with empathy reflecting back thoughtful responses that help you feel understood, not analysed.</p>
+                </div>
+            </div>
+            
+            <div class="step-container">
+                <div class="step-number">03</div>
+                <div class="step-text">
+                    <h3>Grow through Insight reflections</h3>
+                    <p>After each session, review emotional insights tailored to you. Watch patterns emerge, celebrate breakthroughs, and gently identify areas to improve.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

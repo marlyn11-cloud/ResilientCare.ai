@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vent Box - ResilientCare</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div id="consentModal" class="consent-overlay">
+    <div class="consent-box">
+        <button class="consent-back-btn" onclick="window.location.href='index.html'">← Back</button>
+        
+        <h2 class="consent-title">Before we begin</h2>
+        <p class="consent-subtitle">Two quick things to confirm.</p>
+        
+        <div class="consent-options">
+            <label class="consent-label" for="ageCheck">
+                <input type="checkbox" id="ageCheck" class="consent-checkbox" onchange="validateConsent()">
+                <span class="custom-checkbox"></span>
+                <span class="consent-text">I confirm I am 18 years of age or older.</span>
+            </label>
+            
+            <label class="consent-label" for="medicalCheck">
+                <input type="checkbox" id="medicalCheck" class="consent-checkbox" onchange="validateConsent()">
+                <span class="custom-checkbox"></span>
+                <span class="consent-text">I understand ResilientCare is not a medical service, not a crisis line, and does not replace professional therapy or diagnosis. It's a tool for self-reflection and emotional support.</span>
+            </label>
+        </div>
+        
+        <button id="enterBtn" class="btn-enter" disabled onclick="closeConsentModal()">Enter ResilientCare</button>
+    </div>
+</div>
+    <div class="app-single-column">
+        
+        <nav class="vent-nav">
+            <div class="nav-left">
+                <button class="icon-btn" onclick="window.location.href='index.html'">← Home</button>
+            </div>
+            
+            <span class="nav-title">Vent Box</span>
+            
+            <div class="nav-right">
+                <span id="save-indicator" class="auto-save-text">Auto-saved ✓</span>
+            </div>
+        </nav>
+
+        <main class="vent-main">
+            <span class="emoji">:)</span>
+            <h1>Welcome to your safe space!</h1>
+            <h2>I'm here to listen.</h2>
+            <h3> This is not a crisis service. For Emergencies call 988 or call your local emergency number.</h3>
+            <p style="font-size: 15px; margin-bottom: 4px;">Click a topic starter to get started.</p>
+            
+        <details class="quick-starters-collapsible" id="starter-menu">
+                <summary class="collapsible-summary">Click a Quick Starter!</summary>
+            <div class="quick-starters" id="quick-starters-grid">
+                <button class="starter-btn" onclick="sendChip('I feel sad. What are some steps to cope?')">
+                    <span class="btn-emoji">😢</span> Sadness
+                </button>
+                
+                <button class="starter-btn" onclick="sendChip('I feel frustrated. How can I deal with this frustration?')">
+                    <span class="btn-emoji">😤</span> Frustration
+                </button>
+                
+                <button class="starter-btn" onclick="sendChip('I feel anxious. How can I manage this anxiety?')">
+                    <span class="btn-emoji">😰</span> Anxiety
+                </button>
+                
+                <button class="starter-btn" onclick="sendChip('I feel stressed so much coursework has to get done.')">
+                    <span class="btn-emoji">📚</span> Coursework Stress
+                </button>
+                
+                <button class="starter-btn" onclick="sendChip('I missed an exam')">
+                    <span class="btn-emoji">🚨</span> Missed Exam
+                </button>
+                
+                <button class="starter-btn" onclick="sendChip('I\'m completely burned out. I don\'t know why I\'m even in this major.')">
+                    <span class="btn-emoji">🔋</span> Burnout
+                </button>
+
+                <button class="starter-btn" onclick="sendChip('Everyone else gets it but me.')">
+                    <span class="btn-emoji">🎭</span> Imposter Syndrome
+                </button>
+                
+                <button class="starter-btn" onclick="sendChip('Too many deadlines at once.')">
+                    <span class="btn-emoji">⏳</span> Deadline Overload
+                </button>
+                
+                <button class="starter-btn" onclick="sendChip('I\'m so lost on this assignment.')">
+                    <span class="btn-emoji">😵‍💫</span> Confusing Material
+                </button>
+                
+                <button class="starter-btn" onclick="sendChip('I got a bad grade and I feel crushed.')">
+                    <span class="btn-emoji">📉</span> Harsh Grading
+                </button>
+            </div>
+        </details>
+    </main>
+
+        <div class="input-area" id="chat-input-area" style="display: none;">
+            <textarea id="vent-input" placeholder="Share what's on your mind..."></textarea>
+            <button class="circle-ring" onclick="handleSend()">➤</button>
+        </div>
+
+    </div>
+</body>
+</html>
